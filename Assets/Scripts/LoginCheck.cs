@@ -51,7 +51,7 @@ public class LoginCheck : MonoBehaviour
 
     */
 
-    void Start()
+    public void login()
 {
         
 
@@ -61,6 +61,7 @@ public class LoginCheck : MonoBehaviour
     {
         Debug.Log("User is logged in. Loading Scene 1.");
         SceneManager.LoadScene(1);
+
     }
     else
     {

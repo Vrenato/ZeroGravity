@@ -8,6 +8,7 @@ public class Logout : MonoBehaviour
     public void logout()
     {
         SceneManager.LoadScene(0);
+        PlayerPrefs.DeleteKey("name");
 
     }
    

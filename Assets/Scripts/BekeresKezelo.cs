@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BekeresKezelo : MonoBehaviour
 {
@@ -19,12 +20,14 @@ public class BekeresKezelo : MonoBehaviour
             bekertszoveg.text = "A játékosneved nem felel meg a követelményeknek!";
             bekertszoveg.color = Color.red;
             
+
+
         }
         else
         {
             bekertszoveg.text = "Megfelel!";
             bekertszoveg.color = Color.green;
-           
+            PlayerPrefs.SetString("isLogged", "yes");
 
 
         }
