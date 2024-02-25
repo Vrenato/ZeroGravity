@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 841721082}
   - component: {fileID: 841721081}
   m_Layer: 5
-  m_Name: ValidateButton
+  m_Name: LoginButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1491,7 +1491,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Elk\xFCld"
+  m_Text: "Bejelentkez\xE9s\n"
 --- !u!222 &1271140305
 CanvasRenderer:
   m_ObjectHideFlags: 0
