@@ -70,7 +70,7 @@ public class LoginCheck : MonoBehaviour
     }
 }
 
-bool IsLoggedIn()
+ bool IsLoggedIn()
 {
     Debug.Log("IsLoggedIn method called.");
 
