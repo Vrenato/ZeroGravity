@@ -7,27 +7,30 @@ using UnityEngine.SceneManagement;
 public class BekeresKezelo : MonoBehaviour
 {
     [SerializeField] InputField bekeres;
-    [SerializeField] Text bekertszoveg;
-
+    [SerializeField] Text errorMessage;
+    public static bool elfogadotte = true;
+    
     
 
     public void NevEllenorzes()
     {
         string input = bekeres.text;
 
-        if (input.Length > 16 || input.Length < 2)
+        if (input.Length > 10 || input.Length < 4)
         {
-            bekertszoveg.text = "A játékosneved nem felel meg a követelményeknek!";
-            bekertszoveg.color = Color.red;
-            
+            errorMessage.text = "A játékosneved nem felel meg a követelményeknek!";
+            errorMessage.color = Color.red;
+            elfogadotte = false;
+
 
 
         }
         else
         {
-            bekertszoveg.text = "Megfelel!";
-            bekertszoveg.color = Color.green;
+            /*bekertszoveg.text = "Megfelel!";
+            bekertszoveg.color = Color.green; */
             PlayerPrefs.SetString("isLogged", "yes");
+            elfogadotte = true;
 
 
         }

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class LoginCheck : MonoBehaviour
 {
 
+    
+
     /*
     // Start is called before the first frame update
     void Start()
@@ -57,7 +59,7 @@ public class LoginCheck : MonoBehaviour
 
     Debug.Log("Start method called.");
     
-    if (IsLoggedIn())
+    if (IsLoggedIn() && BekeresKezelo.elfogadotte == true)
     {
         Debug.Log("User is logged in. Loading Scene 1.");
         SceneManager.LoadScene(1);
@@ -65,8 +67,9 @@ public class LoginCheck : MonoBehaviour
     }
     else
     {
+
         Debug.Log("User is not logged in. Loading Scene 0.");
-        SceneManager.LoadScene(0);
+        //SceneManager.LoadScene(0);
     }
 }
 
@@ -77,6 +80,7 @@ public class LoginCheck : MonoBehaviour
     if (PlayerPrefs.HasKey("isLogged"))
     {
         string data = PlayerPrefs.GetString("isLogged");
+        
 
         if (data == "yes")
         {

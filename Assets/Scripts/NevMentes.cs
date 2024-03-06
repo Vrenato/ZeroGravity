@@ -6,11 +6,16 @@ using UnityEngine.UI;
 public class NevMentes : MonoBehaviour
 {
     public InputField textBox;
+    
 
    public void clickSaveButton()
     {
-        PlayerPrefs.SetString("name", textBox.text);
-        Debug.Log("A neved: " + PlayerPrefs.GetString("name"));
+        if (BekeresKezelo.elfogadotte == true)
+        {
+            PlayerPrefs.SetString("name", textBox.text);
+            Debug.Log("A neved: " + PlayerPrefs.GetString("name"));
+        }
+        
 
 
     }

@@ -14,11 +14,16 @@ public class DatabaseWrite : MonoBehaviour
 
     public void sendInfo()
     {
-        connection();
-        query = "insert into jatekos(Nev) values('" + playername.text + "');";
-        MS_Command = new MySqlCommand(query, MS_Connection);
-        MS_Command.ExecuteNonQuery();
-        MS_Connection.Close();
+        if (BekeresKezelo.elfogadotte == true)
+        {
+            connection();
+            query = "insert into jatekos(Nev) values('" + playername.text + "');";
+            MS_Command = new MySqlCommand(query, MS_Connection);
+            MS_Command.ExecuteNonQuery();
+            MS_Connection.Close();
+        }
+
+        
 
     }
 
