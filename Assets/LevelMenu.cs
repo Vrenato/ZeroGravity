@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class LevelMenu : MonoBehaviour
 {
     public Button[] buttons;
-    [SerializeField] GameObject selectlevel;
+   
 
     private void Awake()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel1", 1);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
         for (int i = 0; i < buttons.Length; i++)
         {

@@ -6,24 +6,29 @@ using UnityEngine.SceneManagement;
 public class FinishPoint : MonoBehaviour
 {
     [SerializeField] GameObject finishMenu;
+
+    
+
     public void Pause()
     {
         finishMenu.SetActive(true);
     }
 
-    public void NextLevel()
-    {
-        //load the next level
-    }
+    
+
 
     public void Retry()
     {
-        SceneManager.LoadScene(2);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+        
     }
 
-    public void LevelSelector()
+    public void ToMainMenu()
     {
-        //levelselector setactive
+        
+        SceneManager.LoadScene(1);
+        
     }
 
 
@@ -32,14 +37,25 @@ public class FinishPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //menü megjelenítése, vissza a menübe, újrakezdés, tovább
+            
+            UnlockNewLevel();
             Pause();
         }
     }
 
     void UnlockNewLevel()
     {
-        //todo
+
+        Debug.Log("Nem sikerült");
+
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            Debug.Log("Sikerült");
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+            
+        }
     }
 
 }
