@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LevelMenu : MonoBehaviour
 {
     public Button[] buttons;
+    [SerializeField] GameObject selectlevel;
 
     private void Awake()
     {
