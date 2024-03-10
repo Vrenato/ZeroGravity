@@ -2,40 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
+
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 3;
-    public float rotationSpeed = 90;
-    public float gravity = -20f;
-    public float jumpSpeed = 15;
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
 
-    CharacterController characterController;
-    Vector3 moveVelocity;
-    Vector3 turnVelocity;
+    private Rigidbody rb;
 
-    void Awake()
+    void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        var hInput = Input.GetAxis("Horizontal");
-        var vInput = Input.GetAxis("Vertical");
+        // Player movement
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        if (characterController.isGrounded)
+        Vector3 movement = new Vector3(horizontal, 0f, vertical) * moveSpeed * Time.deltaTime;
+        transform.Translate(movement);
+
+        // Player jump
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            moveVelocity = transform.forward * speed * vInput;
-            turnVelocity = transform.up * rotationSpeed * hInput;
-            if (Input.GetButtonDown("Jump"))
-            {
-                moveVelocity.y = jumpSpeed;
-            }
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-        //Adding gravity
-        moveVelocity.y += gravity * Time.deltaTime;
-        characterController.Move(moveVelocity * Time.deltaTime);
-        transform.Rotate(turnVelocity * Time.deltaTime);
+    }
+
+    bool IsGrounded()
+    {
+        // Adjust the raycast distance based on your player's size
+        float raycastDistance = 0.2f;
+        return Physics.Raycast(transform.position, Vector3.down, raycastDistance + 0.1f);
     }
 }

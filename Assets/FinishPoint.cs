@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class FinishPoint : MonoBehaviour
 {
     [SerializeField] GameObject finishMenu;
+    
+
+    
+    
+
 
     
 
@@ -15,7 +20,6 @@ public class FinishPoint : MonoBehaviour
     }
 
     
-
 
     public void Retry()
     {
@@ -46,12 +50,13 @@ public class FinishPoint : MonoBehaviour
     void UnlockNewLevel()
     {
 
-        Debug.Log("Nem sikerült");
+       
 
         if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
         {
-            Debug.Log("Sikerült");
+            
             PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("FirstTime", SceneManager.GetActiveScene().buildIndex + 1);
             PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
             PlayerPrefs.Save();
             
