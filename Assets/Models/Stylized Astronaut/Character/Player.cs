@@ -21,6 +21,12 @@ public class Player : MonoBehaviour {
 
 		void Update (){
 
+        if (controller.transform.position.y < -7)
+        {
+			Debug.Log("Lezuhantál, prty over!");
+        }
+
+
 		if (Input.GetKey ("w"))
 		{
 			anim.SetInteger ("AnimationPar", 1);
