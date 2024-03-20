@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 341386514}
   - component: {fileID: 341386513}
   m_Layer: 5
-  m_Name: Turkiz
+  m_Name: Pink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1094,7 +1094,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 547066108}
         m_TargetAssemblyTypeName: ChangeColor, Assembly-CSharp
-        m_MethodName: ChangeMaterialColorTurkiz
+        m_MethodName: ChangeMaterialColorPink
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   newColor5: {r: 0, g: 0, b: 0, a: 0}
   newColor6: {r: 1, g: 1, b: 1, a: 0}
   newColor7: {r: 1, g: 0.4761402, b: 0, a: 0}
-  newColor8: {r: 0, g: 1, b: 0.99086285, a: 0}
+  newColor8: {r: 1, g: 0.41960785, b: 1, a: 1}
   materials:
   - {fileID: 2100000, guid: 06eb4e637b7ef614e9265f48c542664b, type: 2}
 --- !u!1 &565979325

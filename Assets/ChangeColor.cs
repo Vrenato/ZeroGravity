@@ -82,7 +82,7 @@ public class ChangeColor : MonoBehaviour
             material.color = newColor7;
         }
     }
-    public void ChangeMaterialColorTurkiz()
+    public void ChangeMaterialColorPink()
     {
 
 
