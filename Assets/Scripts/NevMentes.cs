@@ -14,6 +14,7 @@ public class NevMentes : MonoBehaviour
         {
             PlayerPrefs.SetString("name", textBox.text);
             Debug.Log("A neved: " + PlayerPrefs.GetString("name"));
+
         }
         
 

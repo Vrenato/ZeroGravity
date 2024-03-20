@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 public class SetUserName : MonoBehaviour
 {
-    [SerializeField] Text username;
+    [SerializeField] TextMeshProUGUI username;
     
     
 
