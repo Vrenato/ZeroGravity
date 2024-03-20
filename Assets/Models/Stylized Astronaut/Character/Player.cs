@@ -17,8 +17,10 @@ public class Player : MonoBehaviour
 	[SerializeField] GameObject gameOver;
 	[SerializeField] GameObject gameOver2;
 	private bool canJump = true;
-	
-	
+	private float lastJumpTime;
+	public float jumpCooldown = 0.5f;
+
+
 
 
 	public Timer script;
@@ -41,7 +43,10 @@ public class Player : MonoBehaviour
 
 
 
-		
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+			Debug.Log("Space down detected!!");
+        }
 
 
 
@@ -137,19 +142,19 @@ public class Player : MonoBehaviour
 
 
 
-		if (controller.isGrounded)
+		if (controller.isGrounded )
 		{
 			canJump = true;
 			moveDirection = transform.forward * Input.GetAxis("Vertical") * speed;
 			
-			Debug.Log("IsGrounded!");
+			//Debug.Log("IsGrounded!");
 
 
 		}
 		else
 		{
 			canJump = false;
-			Debug.LogError("IsNotGrounded");
+			//Debug.LogError("IsNotGrounded");
 
 
 		}
