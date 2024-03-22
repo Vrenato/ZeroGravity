@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 	[SerializeField] GameObject gameOver2;
 	private bool canJump = true;
 	private float lastJumpTime;
-	public float jumpCooldown = 0.5f;
+	//public float jumpCooldown = 0.5f;
 
 
 
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
 			
 		}
 
-		if (controller.transform.position.y > 12)
+		if (controller.transform.position.y > 20)
 		{
 			gameOver2.SetActive(true);
 			
