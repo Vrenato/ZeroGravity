@@ -330,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &305413781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &355104112
 AudioSource:
   m_ObjectHideFlags: 0
@@ -428,8 +428,9 @@ AudioSource:
   m_GameObject: {fileID: 355104111}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2483f361d9b53d048a16714d57fd6b6c, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: cb2065b514b060449b8d44ff16095efc,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: b2d1c7613c55c624eb5b401ccc9d7fcc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.151
   m_Pitch: 1
@@ -2470,6 +2471,11 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114551384804589004, guid: 2abf19653d633114faedf3b60dc6c39f,
+        type: 3}
+      propertyPath: audiosource1
+      value: 
+      objectReference: {fileID: 355104112}
     - target: {fileID: 114551384804589004, guid: 2abf19653d633114faedf3b60dc6c39f,
         type: 3}
       propertyPath: raycastDistance

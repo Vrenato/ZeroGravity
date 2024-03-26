@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 	[SerializeField] GameObject gameOver2;
 	private bool canJump = true;
 	private float lastJumpTime;
+	public AudioSource audiosource1;
 	//public float jumpCooldown = 0.5f;
 
 
@@ -43,10 +44,7 @@ public class Player : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-			Debug.Log("Space down detected!!");
-        }
+        
 
 
 
@@ -85,13 +83,15 @@ public class Player : MonoBehaviour
 		if (controller.transform.position.y < -7)
 		{
 			gameOver.SetActive(true);
+			audiosource1.Stop();
 			
 		}
 
 		if (controller.transform.position.y > 20)
 		{
 			gameOver2.SetActive(true);
-			
+			audiosource1.Stop();
+
 		}
 
 
