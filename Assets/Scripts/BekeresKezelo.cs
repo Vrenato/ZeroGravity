@@ -16,25 +16,34 @@ public class BekeresKezelo : MonoBehaviour
     {
         string input = bekeres.text;
 
-        if (input.Length > 10 || input.Length < 4)
+        if (input.Length > 10 || input.Length < 4 /*|| DatabaseWrite.engedelyezett == false*/)
         {
             errorMessage.text = "A játékosneved nem felel meg a követelményeknek!";
             errorMessage.color = Color.red;
             elfogadotte = false;
 
 
-
-        }
+            StartCoroutine(DisplayErrorMessageForSeconds(2));
+        } 
+        
         else
         {
             /*bekertszoveg.text = "Megfelel!";
             bekertszoveg.color = Color.green; */
+            errorMessage.text = "";
             PlayerPrefs.SetString("isLogged", "yes");
             elfogadotte = true;
 
 
         }
 
+    }
+
+    private IEnumerator DisplayErrorMessageForSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds); // Wait for specified time
+
+        errorMessage.text = ""; // Clear error message after waiting
     }
 
 

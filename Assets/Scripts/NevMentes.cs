@@ -10,7 +10,7 @@ public class NevMentes : MonoBehaviour
 
    public void clickSaveButton()
     {
-        if (BekeresKezelo.elfogadotte == true)
+        if (BekeresKezelo.elfogadotte == true && DatabaseWrite.engedelyezett == true)
         {
             PlayerPrefs.SetString("name", textBox.text);
             Debug.Log("A neved: " + PlayerPrefs.GetString("name"));

@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class FinishPoint : MonoBehaviour
 {
     [SerializeField] GameObject finishMenu;
-    
 
-    
-    
+  
 
 
-    
+
+   
+
 
     public void Pause()
     {
@@ -62,5 +62,8 @@ public class FinishPoint : MonoBehaviour
             
         }
     }
+
+   
+
 
 }

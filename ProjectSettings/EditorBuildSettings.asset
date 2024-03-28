@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 10.unity
     guid: aaecbebee68ba62439f75ff085a9f3ed
+  - enabled: 1
+    path: Assets/Scenes/ChallangeLevel.unity
+    guid: 3c2411aa3d36c5d489248f527af0722b
   m_configObjects: {}

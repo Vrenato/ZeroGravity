@@ -57,18 +57,19 @@ public class LoginCheck : MonoBehaviour
 {
         
 
-    Debug.Log("Start method called.");
     
-    if (IsLoggedIn() && BekeresKezelo.elfogadotte == true)
+    
+    if (IsLoggedIn() && BekeresKezelo.elfogadotte == true && DatabaseWrite.engedelyezett == true)
     {
         Debug.Log("User is logged in. Loading Scene 1.");
         SceneManager.LoadScene(1);
-
-    }
+        
+        }
     else
     {
 
         Debug.Log("User is not logged in. Loading Scene 0.");
+        
         //SceneManager.LoadScene(0);
     }
 }
