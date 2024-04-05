@@ -44,8 +44,8 @@ public class Challange : MonoBehaviour
         // Egy adott játékos(aki be van lépve) kilistázza az adatait.
         //query = "Select Nev, Ido FROM jatekos WHERE Nev LIKE('" + name + "')";
 
-        query = "SELECT Nev, Ido FROM jatekos WHERE IDO > 0 ORDER BY Ido ASC LIMIT 10";
-        ConnectionString = "Server = localhost ; Database = zerogravity ; User = root; Password = ; Charset = utf8;";
+        query = "SELECT Nev, Ido FROM jatekos WHERE IDO < 999 ORDER BY Ido ASC LIMIT 10";
+        ConnectionString = "Server = localhost; Database = zerogravity ; User = root; Password =; Charset = utf8;";
         MS_Connection = new MySqlConnection(ConnectionString);
 
         MS_Connection.Open();
@@ -72,7 +72,7 @@ public class Challange : MonoBehaviour
         //query = "Select Nev, Ido FROM jatekos WHERE Nev LIKE('" + name + "')";
 
         query = "SELECT Nev, Ido FROM jatekos  ORDER BY Ido DESC LIMIT 10";
-        ConnectionString = "Server = localhost ; Database = zerogravity ; User = root; Password = ; Charset = utf8;";
+        ConnectionString = "Server = localhost; Database = zerogravity ; User = root; Password =; Charset = utf8;";
         MS_Connection = new MySqlConnection(ConnectionString);
 
         MS_Connection.Open();
@@ -95,7 +95,7 @@ public class Challange : MonoBehaviour
     public void BestTime()
     {
         query = "Select Nev, Ido FROM jatekos WHERE Nev LIKE('" + name + "')";
-        ConnectionString = "Server = localhost ; Database = zerogravity ; User = root; Password = ; Charset = utf8;";
+        ConnectionString = "Server = localhost; Database = zerogravity ; User = root; Password =; Charset = utf8;";
         MS_Connection = new MySqlConnection(ConnectionString);
 
         MS_Connection.Open();

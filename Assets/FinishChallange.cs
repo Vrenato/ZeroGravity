@@ -45,9 +45,11 @@ public class FinishChallange : MonoBehaviour
         {
            
             connection();
-
+            
             PlayerPrefs.SetFloat("LevelTime", Timer2.elapsedTime);
             PlayerPrefs.Save();
+
+            //Challange.besttime = Convert.ToInt32(PlayerPrefs.GetFloat("LevelTime"));
 
     /*
             query = "UPDATE jatekos SET Ido='" + PlayerPrefs.GetFloat("LevelTime") + "' WHERE Nev LIKE('" + PlayerPrefs.GetString("name") + "')";
@@ -58,17 +60,18 @@ public class FinishChallange : MonoBehaviour
             End();
 
             
-      */      
+      */
 
 
-            
+
 
             Debug.Log("Besttime: " + Challange.besttime);
-
+            Debug.Log("Jelenlegid: " + PlayerPrefs.GetFloat("LevelTime"));
 
             
             if (Challange.besttime > PlayerPrefs.GetFloat("LevelTime"))
             {
+                Debug.Log("Benne van az ifben");
                 query = "UPDATE jatekos SET Ido='" + PlayerPrefs.GetFloat("LevelTime") + "' WHERE Nev LIKE('" + PlayerPrefs.GetString("name") + "')";
                 MS_Command = new MySqlCommand(query, MS_Connection);
                 MS_Command.ExecuteNonQuery();
@@ -78,6 +81,7 @@ public class FinishChallange : MonoBehaviour
             }
             else
             {
+                Debug.Log("Benne van az ifben külsõleg");
                 End();
             }
             
@@ -91,7 +95,7 @@ public class FinishChallange : MonoBehaviour
 
     public void connection()
     {
-        ConnectionString = "Server = localhost ; Database = zerogravity ; User = root; Password = ; Charset = utf8;";
+        ConnectionString = "Server = localhost; Database = zerogravity ; User = root; Password =; Charset = utf8;";
         MS_Connection = new MySqlConnection(ConnectionString);
 
         MS_Connection.Open();

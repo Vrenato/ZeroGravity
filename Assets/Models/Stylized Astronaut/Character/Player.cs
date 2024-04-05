@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
 		if (canJump)
 		{
-			// Process jump input only when the player is allowed to jump
+			
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
 		}
 		void Jump()
 		{
-			// Your jump logic here
+			
 			moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
 			// Disable jumping for a certain duration 
 			//StartCoroutine(DisableJumpForSeconds(0.1f));
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
 		}
 
 
-		if (Input.GetKey("w"))
+		if (Input.GetKey("up") || Input.GetKey("w"))
 		{
 			anim.SetInteger("AnimationPar", 1);
 		}

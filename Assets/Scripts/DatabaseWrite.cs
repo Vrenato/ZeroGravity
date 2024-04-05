@@ -62,7 +62,8 @@ public class DatabaseWrite : MonoBehaviour
         if (BekeresKezelo.elfogadotte == true && engedelyezett == true)
         {
             //connection();
-            query = "insert into jatekos(Nev) values('" + playername.text + "');";
+            //query = "insert into jatekos(Nev) values('" + playername.text + "');";
+            query = "INSERT INTO jatekos(Nev, Ido) VALUES ('" + playername.text + "','999')";
             MS_Command = new MySqlCommand(query, MS_Connection);
             MS_Command.ExecuteNonQuery();
             MS_Connection.Close();
@@ -74,7 +75,7 @@ public class DatabaseWrite : MonoBehaviour
 
     public void connection()
     {
-        ConnectionString = "Server = localhost ; Database = zerogravity ; User = root; Password = ; Charset = utf8;";
+        ConnectionString = "Server = localhost; Database = zerogravity ; User = root; Password =; Charset = utf8;";
         MS_Connection = new MySqlConnection(ConnectionString);
 
         MS_Connection.Open();

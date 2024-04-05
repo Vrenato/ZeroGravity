@@ -16,7 +16,7 @@ public class BekeresKezelo : MonoBehaviour
     {
         string input = bekeres.text;
 
-        if (input.Length > 10 || input.Length < 4 /*|| DatabaseWrite.engedelyezett == false*/)
+        if (input.Length > 10 || input.Length < 4)
         {
             errorMessage.text = "A játékosneved nem felel meg a követelményeknek!";
             errorMessage.color = Color.red;
@@ -41,9 +41,9 @@ public class BekeresKezelo : MonoBehaviour
 
     private IEnumerator DisplayErrorMessageForSeconds(float seconds)
     {
-        yield return new WaitForSeconds(seconds); // Wait for specified time
+        yield return new WaitForSeconds(seconds); 
 
-        errorMessage.text = ""; // Clear error message after waiting
+        errorMessage.text = ""; 
     }
 
 
