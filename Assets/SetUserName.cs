@@ -9,7 +9,7 @@ public class SetUserName : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI username;
     
-    
+    //beállítja a játékosnevet
 
     private void Start()
     {

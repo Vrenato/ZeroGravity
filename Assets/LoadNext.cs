@@ -5,22 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadNext : MonoBehaviour
 {
-    //public static LoadNext instance;
 
-
-    /*private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    */
 
     public void NextLevel()
     {

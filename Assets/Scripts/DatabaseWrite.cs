@@ -19,12 +19,11 @@ public class DatabaseWrite : MonoBehaviour
     public static bool engedelyezett = true;
     
     
-    
+    //csatlakozik az adatbázishoz és ellenőrzi hogy a regisztrálni kívánt név szerepel-e már az adatbázisban
     public void CheckInfo()
     {
         connection();
 
-        //query = "SELECT COUNT(Nev) FROM `jatekos` WHERE Nev LIKE('" + playername.text + "')";
         query = "SELECT COUNT(Nev) FROM `jatekos` WHERE Nev LIKE('" + playername.text + "')"; 
         MS_Command = new MySqlCommand(query, MS_Connection);
 
@@ -36,7 +35,6 @@ public class DatabaseWrite : MonoBehaviour
         }
         Ms_Reader.Close();
 
-        Debug.Log("nevekszama:" + namecount);
 
         if (namecount > 0)
         {
@@ -56,13 +54,12 @@ public class DatabaseWrite : MonoBehaviour
 
     }
 
-
+    //ha minden kritérium megfelel, akkor felveszi az datnázisba a nevet
     public void sendInfo()
     {
         if (BekeresKezelo.elfogadotte == true && engedelyezett == true)
         {
-            //connection();
-            //query = "insert into jatekos(Nev) values('" + playername.text + "');";
+           
             query = "INSERT INTO jatekos(Nev, Ido) VALUES ('" + playername.text + "','999')";
             MS_Command = new MySqlCommand(query, MS_Connection);
             MS_Command.ExecuteNonQuery();
@@ -73,6 +70,7 @@ public class DatabaseWrite : MonoBehaviour
 
     }
 
+    //csatlakozás az adatbázishoz
     public void connection()
     {
         ConnectionString = "Server = localhost; Database = zerogravity ; User = root; Password =; Charset = utf8;";
@@ -81,12 +79,12 @@ public class DatabaseWrite : MonoBehaviour
         MS_Connection.Open();
     }
 
-
+    //megjeleníti a hibaüzenetet adott másodpercig
     private IEnumerator DisplayErrorMessageForSeconds(float seconds)
     {
-        yield return new WaitForSeconds(seconds); // Wait for specified time
+        yield return new WaitForSeconds(seconds); 
 
-        errormessage2.text = ""; // Clear error message after waiting
+        errormessage2.text = ""; 
     }
 
 }

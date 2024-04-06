@@ -28,8 +28,7 @@ public class BekeresKezelo : MonoBehaviour
         
         else
         {
-            /*bekertszoveg.text = "Megfelel!";
-            bekertszoveg.color = Color.green; */
+
             errorMessage.text = "";
             PlayerPrefs.SetString("isLogged", "yes");
             elfogadotte = true;

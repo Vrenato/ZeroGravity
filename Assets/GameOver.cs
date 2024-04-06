@@ -5,17 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    private void Start()
-    {
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
-    }
-
+    //fõmenübe való kilépés
     public void fomenu()
     {
         SceneManager.LoadScene(1);
     }
 
+    //szint újrakezdése
     public void Retry()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

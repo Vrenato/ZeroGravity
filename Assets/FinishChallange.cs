@@ -14,31 +14,31 @@ public class FinishChallange : MonoBehaviour
     private MySqlDataReader Ms_Reader;
     string query;
     public static int besttime;
-   
 
 
 
+    //szint újrakezdése
     public void Retry()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
 
     }
-
+    //fõmenübe való kilépés
     public void ToMainMenu()
     {
 
         SceneManager.LoadScene(1);
 
     }
-
+    //kihívás teljesítve menü
     public void End()
     {
         finishMenu2.SetActive(true);
     }
 
     
-    
+    //ha a játékos az utolsó pályaelemre lép, akkor menti az idejét, ha jobban teljesített mint utólag
         private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
@@ -48,30 +48,10 @@ public class FinishChallange : MonoBehaviour
             
             PlayerPrefs.SetFloat("LevelTime", Timer2.elapsedTime);
             PlayerPrefs.Save();
-
-            //Challange.besttime = Convert.ToInt32(PlayerPrefs.GetFloat("LevelTime"));
-
-    /*
-            query = "UPDATE jatekos SET Ido='" + PlayerPrefs.GetFloat("LevelTime") + "' WHERE Nev LIKE('" + PlayerPrefs.GetString("name") + "')";
-            MS_Command = new MySqlCommand(query, MS_Connection);
-            MS_Command.ExecuteNonQuery();
-            MS_Connection.Close();
-            Debug.Log("Az idõ: " + PlayerPrefs.GetFloat("LevelTime"));
-            End();
-
-            
-      */
-
-
-
-
-            Debug.Log("Besttime: " + Challange.besttime);
-            Debug.Log("Jelenlegid: " + PlayerPrefs.GetFloat("LevelTime"));
-
+       
             
             if (Challange.besttime > PlayerPrefs.GetFloat("LevelTime"))
             {
-                Debug.Log("Benne van az ifben");
                 query = "UPDATE jatekos SET Ido='" + PlayerPrefs.GetFloat("LevelTime") + "' WHERE Nev LIKE('" + PlayerPrefs.GetString("name") + "')";
                 MS_Command = new MySqlCommand(query, MS_Connection);
                 MS_Command.ExecuteNonQuery();
@@ -80,8 +60,7 @@ public class FinishChallange : MonoBehaviour
                 End();
             }
             else
-            {
-                Debug.Log("Benne van az ifben külsõleg");
+            {              
                 End();
             }
             

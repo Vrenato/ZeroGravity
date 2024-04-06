@@ -19,11 +19,6 @@ public class Player : MonoBehaviour
 	private bool canJump = true;
 	private float lastJumpTime;
 	public AudioSource audiosource1;
-	//public float jumpCooldown = 0.5f;
-
-
-
-
 	public Timer script;
 
 	void Start()
@@ -44,19 +39,13 @@ public class Player : MonoBehaviour
 
 
 
-        
-
-
 
 		if (canJump)
 		{
 			
 			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				
-				Jump();
-				
-				
+			{				
+				Jump();				
 
 			}
 
@@ -66,19 +55,8 @@ public class Player : MonoBehaviour
 		{
 			
 			moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
-			// Disable jumping for a certain duration 
-			//StartCoroutine(DisableJumpForSeconds(0.1f));
-		}
-		/*
-		System.Collections.IEnumerator DisableJumpForSeconds(float seconds)
-		{
-			// Disable jumping for the specified duration
-			canJump = false;
-			yield return new WaitForSeconds(seconds);
-			canJump = true;
-		}
 
-		*/
+		}	
 
 		if (controller.transform.position.y < -7)
 		{
@@ -146,15 +124,12 @@ public class Player : MonoBehaviour
 		{
 			canJump = true;
 			moveDirection = transform.forward * Input.GetAxis("Vertical") * speed;
-			
-			//Debug.Log("IsGrounded!");
 
 
 		}
 		else
 		{
 			canJump = false;
-			//Debug.LogError("IsNotGrounded");
 
 
 		}

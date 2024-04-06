@@ -18,10 +18,6 @@ public class FinishPointLevel10 : MonoBehaviour
     private void Start()
     {
 
-
-        //audioSource1 = GetComponent<AudioSource>();
-        //audioSource2 = GetComponent<AudioSource>();
-
     }
 
 

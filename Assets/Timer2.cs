@@ -23,12 +23,11 @@ public class Timer2 : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
     }
-
+    //visszaállítja az idõzítõt nullára
     public void ResetTimer()
     {
         elapsedTime = 0f;
         timerText.text = "00:00";
-        //isTimerRunning = true;
     }
 
 

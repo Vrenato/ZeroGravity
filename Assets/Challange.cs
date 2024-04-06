@@ -16,14 +16,13 @@ public class Challange : MonoBehaviour
     private MySqlDataReader Ms_Reader;
     string query;
     public static int besttime;
-    //public TextMeshProUGUI playername;
     [SerializeField] TextMeshProUGUI playername;
 
     [SerializeField] TextMeshProUGUI playertime;
     
     public static string name;
 
-
+    //induláskor megkapja a játékosnevet
     private void Start()
     {
         name = PlayerPrefs.GetString("name");
@@ -32,17 +31,16 @@ public class Challange : MonoBehaviour
 
     }
 
+    //elindítja a kihívás játékmódot
     public static void StartChallange()
     {
         SceneManager.LoadScene(12);
     }
 
-
+    //betölti az adatokat a listába(csak a 999 mésodpercnél kisebbeket)
     public void GetData()
     {
 
-        // Egy adott játékos(aki be van lépve) kilistázza az adatait.
-        //query = "Select Nev, Ido FROM jatekos WHERE Nev LIKE('" + name + "')";
 
         query = "SELECT Nev, Ido FROM jatekos WHERE IDO < 999 ORDER BY Ido ASC LIMIT 10";
         ConnectionString = "Server = localhost; Database = zerogravity ; User = root; Password =; Charset = utf8;";
@@ -65,11 +63,10 @@ public class Challange : MonoBehaviour
         Ms_Reader.Close();
     }
 
+    //vissza gombra nyomáskor az adatok törlõdnek a toplistából
     public void DeleteData()
     {
 
-        // Egy adott játékos(aki be van lépve) kilistázza az adatait.
-        //query = "Select Nev, Ido FROM jatekos WHERE Nev LIKE('" + name + "')";
 
         query = "SELECT Nev, Ido FROM jatekos  ORDER BY Ido DESC LIMIT 10";
         ConnectionString = "Server = localhost; Database = zerogravity ; User = root; Password =; Charset = utf8;";
@@ -92,6 +89,7 @@ public class Challange : MonoBehaviour
         Ms_Reader.Close();
     }
 
+    //játékos legjobb idejének kiszámítása
     public void BestTime()
     {
         query = "Select Nev, Ido FROM jatekos WHERE Nev LIKE('" + name + "')";
@@ -111,17 +109,6 @@ public class Challange : MonoBehaviour
         }
         Ms_Reader.Close();
 
-        Debug.Log("A best timeod: " + besttime);
     }
 
-
-    /*
-    public void connection()
-    {
-        ConnectionString = "Server = localhost ; Database = zerogravity ; User = root; Password = ; Charset = utf8;";
-        MS_Connection = new MySqlConnection(ConnectionString);
-
-        MS_Connection.Open();
-    }
-    */
 }

@@ -7,7 +7,7 @@ public class LevelMenu : MonoBehaviour
 {
     public Button[] buttons;
    
-
+    //a feloldott szinteket beállítja elérhetõvé, a többi letiltva marad
     private void Awake()
     {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
@@ -22,7 +22,7 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
-
+    //betölti az adott szintet
     public void OpenLevel(int levelId)
     {
         string levelName = "Level " + levelId;

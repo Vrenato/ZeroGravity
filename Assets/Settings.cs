@@ -25,21 +25,21 @@ public class Settings : MonoBehaviour
         audioMixer.SetFloat("volume", volumevalue);
         PlayerPrefs.SetFloat("Volume", volumevalue);
     }
-
+    //beállítja a hangerõt a megadott értékre
     public void SetVolume(float volume)
     {
 
         volumevalue = volume;
     }
 
-
+    //beállítja a grafikát a megadott beállításra, és elmenti azt
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
         PlayerPrefs.SetInt(QualityKey, qualityIndex);
         PlayerPrefs.Save();
     }
-
+    //betölti a grafikai beállítást
     public void LoadQuality()
     {
         if (PlayerPrefs.HasKey(QualityKey))
