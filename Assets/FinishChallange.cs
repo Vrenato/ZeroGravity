@@ -70,7 +70,7 @@ public class FinishChallange : MonoBehaviour
     }
     
     
-
+    //csatlakozás az adatbázishoz
 
     public void connection()
     {
